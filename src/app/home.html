@@ -1,0 +1,23 @@
+<div class="component">
+  <h2>{{$ctrl.text}}</h2>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-6">
+    <div class="form-group">
+      <label for="input">Input: </label>
+      <input type="text" ng-model="$ctrl.maVariable" class="form-control" id="input"></p>
+      <button type="button" class="btn btn-warning" ng-click="$ctrl.addItem()"> Ajouter </button>
+      <button type="button" class="btn btn-warning" ng-click="$ctrl.addItem()"> test</button>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-6">
+    <h3>Afficher</h3>
+    <p>{{$ctrl.maVariable}}</p>
+    <p ng-bind="$ctrl.maListe"></p>
+    <ul>
+      <li ng-repeat="el in $ctrl.maListe track by $index"> {{el}} {{$index}} <span class="glyphicon glyphicon-remove" ng-click="$ctrl.maListe.splice({{$index}},1)"></span></li>
+    </ul>
+    <p></p>
+  </div>
+</div>
